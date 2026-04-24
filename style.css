@@ -86,6 +86,7 @@ body {
 
 #task-container {
     width: 22%;
+    max-width: 450px;
     background: var(--color-surface);
     border-right: 1px solid var(--color-border);
     padding: 36px 28px;
@@ -114,7 +115,7 @@ body {
 }
 
 iframe {
-    width: 78%;
+    flex: 1;
     height: 100%;
     border: none;
     box-shadow: -8px 0 24px var(--color-shadow);
