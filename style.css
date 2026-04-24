@@ -50,6 +50,10 @@ body {
     z-index: 999;
 }
 
+#end-screen {
+    width: 520px;
+}
+
 #intro-screen h2, #end-screen h2 {
     margin: 0 0 10px;
     font-size: 20px;
@@ -71,6 +75,55 @@ body {
     font-weight: 600;
     color: var(--color-text-primary);
     letter-spacing: -0.2px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.summary-row:last-child {
+    border-bottom: none;
+}
+
+.summary-task {
+    font-size: 14px;
+    color: var(--color-text-primary);
+    flex: 1;
+    padding-right: 16px;
+}
+
+.summary-badge {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.summary-badge--easy {
+    background: var(--color-action);
+    color: var(--color-surface);
+}
+
+.summary-badge--medium {
+    background: var(--color-text-primary);
+    color: var(--color-surface);
+}
+
+.summary-badge--hard {
+    background: var(--color-text-primary);
+    color: var(--color-surface);
+    opacity: 0.6;
+}
+
+.summary-badge--skipped {
+    background: transparent;
+    color: var(--color-text-secondary);
+    border: 1px solid var(--color-border-input);
 }
 
 .rate-btn-group {

@@ -8,6 +8,6 @@
 
 * Clone the repo
 * Edit the task list in script.js
-* Edit the taraget url in index.html
+* Edit the target url in index.html
 * Open index.html in a browser
 * Hand the laptop to your participant and start recording

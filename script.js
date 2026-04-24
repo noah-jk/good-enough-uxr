@@ -5,44 +5,50 @@ $(document).ready(function () {
         "Locate the counseling page"
     ];
     let currentTaskIndex = 0;
+    let results = [];
 
-    // Function to show tasks
     function showTask() {
         if (currentTaskIndex >= tasks.length) {
-            $("#testing-area").hide();
-            $("#end-screen").removeClass("hidden");
+            showSummary();
             return;
         }
-
         $("#task-text").text(tasks[currentTaskIndex]);
     }
 
-    // Start Test Button Click
+    function showSummary() {
+        $("#testing-area").hide();
+        const $list = $("#summary-list").empty();
+        results.forEach(function (r) {
+            const badgeClass = "summary-badge--" + r.rating.toLowerCase();
+            $list.append(
+                $("<div>").addClass("summary-row").append(
+                    $("<span>").addClass("summary-task").text(r.task),
+                    $("<span>").addClass("summary-badge " + badgeClass).text(r.rating)
+                )
+            );
+        });
+        $("#end-screen").removeClass("hidden");
+    }
+
     $("#start-test").click(function () {
-        console.log("Test Started");
         $("#intro-screen, #overlay").fadeOut(300);
         $("#testing-area").removeClass("hidden");
         showTask();
     });
 
-    // Skip Task Button Click
     $("#skip-task").click(function () {
-        console.log("Skip Task Clicked - Before:", currentTaskIndex);
+        results.push({ task: tasks[currentTaskIndex], rating: "Skipped" });
         currentTaskIndex++;
-        console.log("Skip Task Clicked - After:", currentTaskIndex);
         showTask();
     });
 
-    // Task Complete Button Click - Show Rating Popup & Overlay
     $("#task-complete").click(function () {
-        console.log("Task Complete Clicked");
         $("#rating-popup").fadeIn(300);
         $("#overlay").fadeIn(300);
     });
 
-    // Handle Task Rating & Hide Popup
     $(".rate-btn").click(function () {
-        console.log("Rating Submitted:", $(this).data("rating"));
+        results.push({ task: tasks[currentTaskIndex], rating: $(this).data("rating") });
         $("#rating-popup").fadeOut(300);
         $("#overlay").fadeOut(300);
         currentTaskIndex++;
