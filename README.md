@@ -7,6 +7,7 @@ Prompts a difficulty rating after each task
 #How to use
 
 Clone the repo
-Edit the task list and target URL in config.js
+Edit the task list in config.js
+Edit the taraget url in index.html
 Open index.html in a browser
-Hand the laptop to your participant
+Hand the laptop to your participant and start recording

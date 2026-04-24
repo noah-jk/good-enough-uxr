@@ -1,7 +1,7 @@
 $(document).ready(function () {
     let tasks = [
-        "Find the nursing assistant program",
-        "Locate the César E. Chávez Campus Page",
+        "Find the computer science program",
+        "Locate the primary address",
         "Locate the counseling page"
     ];
     let currentTaskIndex = 0;
