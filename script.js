@@ -9,6 +9,7 @@ $(document).ready(function () {
     ];
 
     // --- State ---
+    const iframeStartUrl = $("#test-iframe").attr("src");
     let currentTaskIndex = 0; // which task is currently active
     let results = [];         // accumulated { task, rating, duration } for each completed/skipped task
     let taskStart = null;     // timestamp (ms) when the current task began
@@ -108,6 +109,11 @@ $(document).ready(function () {
         results.push({ task: tasks[currentTaskIndex], rating: "Skipped", duration: taskDuration });
         currentTaskIndex++;
         showTask();
+    });
+
+    // Reset the iframe to the original start URL.
+    $("#reload-iframe").click(function () {
+        $("#test-iframe").attr("src", iframeStartUrl);
     });
 
     // Stop the task timer and show the SEQ rating popup.

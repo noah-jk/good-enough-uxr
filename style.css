@@ -52,6 +52,8 @@ body {
 
 #end-screen, #umux-screen {
     width: 520px;
+    max-height: calc(100vh - 48px);
+    overflow-y: auto;
 }
 
 #umux-screen h2 {
@@ -223,8 +225,8 @@ body {
 .seq-labels {
     display: flex;
     justify-content: space-between;
-    font-size: 11px;
-    color: var(--color-text-secondary);
+    font-size: 12px;
+    color: var(--color-text-primary);
 }
 
 .rate-btn-group {
@@ -323,6 +325,23 @@ button:hover {
     background: transparent;
     color: var(--color-text-body);
     border-color: var(--color-border-input-hover);
+    opacity: 1;
+}
+
+#reload-iframe {
+    width: 100%;
+    margin-top: 16px;
+    background: transparent;
+    color: var(--color-text-secondary);
+    border-color: transparent;
+    font-size: 12px;
+    padding: 6px 18px;
+}
+
+#reload-iframe:hover {
+    background: transparent;
+    color: var(--color-text-body);
+    border-color: var(--color-border-input);
     opacity: 1;
 }
 
